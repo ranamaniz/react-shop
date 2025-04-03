@@ -1,0 +1,132 @@
+.product {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+
+  @media only screen and (max-width: 1040px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
+
+    @media only screen and (max-width: 800px) {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    padding: 16px 24px;
+  }
+
+  &__price {
+    padding-left: 5px;
+    font-size: 24px;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+  }
+  &__discount {
+    font-size: 14px;
+    color: #8d0101;
+  }
+
+  &__mrp {
+    font-size: 12px;
+    color: #787878;
+    &__price {
+      text-decoration: line-through;
+    }
+  }
+
+  &__status {
+    margin-left: 10px;
+
+    padding: 2px 4px;
+    font-size: 10px;
+    color: #045004;
+    border-radius: 3px;
+    background-color: #004b00;
+    color: #fafafa;
+    &__low {
+      background-color: #b60000;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  &__category {
+    background-color: #606060;
+    color: #fafafa;
+    border-radius: 3px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+  }
+
+  &__description {
+    color: #303030;
+  }
+
+  &__review {
+    padding: 8px 14px;
+    background-color: #f8f8f8;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    &__container {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+
+      @media only screen and (max-width: 1040px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &__header,
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 12px;
+    }
+
+    &__comment {
+      color: #303030;
+    }
+  }
+}

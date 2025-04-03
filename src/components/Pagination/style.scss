@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+    margin: 6px 0;
+  }
+  &__item,
+  &__arrow {
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+    padding: 2px 6px;
+    background-color: #f9f9f9;
+    &:hover {
+      background-color: #ededed;
+    }
+  }
+}
