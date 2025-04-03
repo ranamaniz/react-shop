@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Product } from "../../../types/types";
 import "./style.scss";
 
 const ProductListItem = ({ product }: { product: Product }) => {
+  const [searchParams] = useSearchParams();
+
   const productPrice = (
     product.price *
     (1 - product.discountPercentage / 100)
@@ -10,9 +12,16 @@ const ProductListItem = ({ product }: { product: Product }) => {
 
   const isLowStock = product.availabilityStatus.toLowerCase().includes("low");
 
+  const page = searchParams.get("page");
+
+  let link = `product/${product.id}`;
+  if (!!page) {
+    link += `?page=${page}`;
+  }
+
   return (
     <li key={product.id} className="product-item">
-      <Link to={`product/${product.id}`} className="product-item__link">
+      <Link to={link} className="product-item__link">
         <div className="product-item__header">
           <img
             src={product?.thumbnail}
