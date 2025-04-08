@@ -14,7 +14,7 @@ const Pagination = ({
   currentPage,
 }: PaginationProps) => {
   const totalPages = Math.ceil(totalCount / pageSize);
-  console.log(totalPages);
+  
 
   const handlePageChange = (page: number | string) => {
     if (typeof page === "string") {

@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductList from "./components/Products/ProductList";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ProductDetails from "./components/Products/ProductDetails";
+import ProductList from "./components/Products/ProductList";
 
 const App: React.FC = () => {
   return (
@@ -21,15 +21,7 @@ const App: React.FC = () => {
           </Routes>
         </div>
 
-        <div
-          style={{
-            width: "300px",
-            borderLeft: "1px solid #ccc",
-            padding: "20px",
-          }}
-        >
-          <ProductList />
-        </div>
+        <ProductList />
       </div>
     </Router>
   );
